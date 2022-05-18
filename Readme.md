@@ -1,4 +1,4 @@
-# Homework #5
+# Huan Chen's Homework #5
 
 ## Lecture 13: IoT Flask Web (github, vs code)
 ### Development Environment Setup
@@ -9,3 +9,4 @@
 5. pip install flask, pandas, sklearn 
   * 快捷鍵 ctrl+shift+p ===> package manager 叫出 (git clone....)
   * 快捷鍵 ctrl+' ==> 叫出終端機 
+
