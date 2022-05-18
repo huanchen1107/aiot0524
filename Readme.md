@@ -12,7 +12,7 @@
 6. 為了要upload local file to github from local要終端機 C:> 設定下面
    * C:> git config --global user.name "Huan Chen"
    * C:> git config --global user.email huanchen1107@gmail.com
- <img src="./step.jpg" height=200 />  
+ <img src="./step.jpg" height=400 />  
 
 
 
