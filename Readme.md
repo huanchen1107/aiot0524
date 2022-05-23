@@ -1,7 +1,8 @@
-# Huan Chen's Homework #5 v0
+# Huan Chen's Homework #5
 
 ## Lecture 14: IoT Flask Web (github, vs code)
-### Development Environment Setup
+
+### Step 1 : Development Environment Setup
 1. Please install vs code, register github, install git for windows
 2. (check-point 1) github create a new repository (aiot0524)
 3. go to vs code clone this repository (choose new branch) 
@@ -12,7 +13,7 @@
 6. (check-point 2) 為了要upload local file to github from local要終端機 C:> 設定下面
    * C:> git config --global user.name "Huan Chen"
    * C:> git config --global user.email huanchen1107@gmail.com
- <img src="./step.jpg" height=300 />  
+
 
 
 
