@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<!--<meta charset="UTF-8" http-equiv="refresh" content="5">-->
+
+	<title>Highcharts</title>
+	<!-- jQuery js -->	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+	<!--include the highcharts library-->
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	
+	<!-- Bootstrap css and js -->
+	<link  rel= "stylesheet"  href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+	<link  rel= "stylesheet"  href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" >
+
+	<script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+
+	<script>
+	function highcharsinit(){
+		$('#container').highcharts({
+			title: {
+				text: 'Sensor data from MySQL to Highcharts',
+				x: -20 
+			},
+			subtitle: {
+				text: 'Light Value',
+				x: -20
+			},
+			xAxis: {
+				title: {
+				text: 'Time'
+				},
+				categories: time,
+				labels:{ //隱藏X軸的標籤
+					enabled: false,
+				}
+			},
+			yAxis: {
+				title: {
+				text: 'value',
+				}
+			},
+			//圖表的資料
+			/*
+			series: [{
+				name: 'Sensor-lights',
+				data: lights
+			},{
+				name: 'Sensor-humids',
+				data: humis
+			},{
+				name: 'Sensor-temps',
+				data: temps
+			}]*/
+			series: [{
+				name: 'Sensor-lights',
+				data: lights
+			}],
+			////////////
+		});
+	}
+
+	
+
+	$(function () {
+		$.ajax({									  
+			url: 'GetData.php',//連接的URL	  
+			data: "{}",//夾帶的參數
+			dataType: 'json', //資料格式 
+			success: function(data)	//傳送成功的function
+				{	
+					lights = [];
+					humis=[];
+					temps = [];
+					time = [];
+					
+					for (var i =  0; i < data.length; i++)
+					{
+						if(parseInt(data[i][5])==0){
+							lights.push({y:parseInt(data[i][2]), color: '#FF0000' });
+							humis.push({y:parseInt(data[i][3]), color: '#FF0000' });
+							temps.push({y:parseInt(data[i][4]), color: '#FF0000' });
+						}else{
+							lights.push({y:parseInt(data[i][2]), color: '#00FF00' });
+							humis.push({y:parseInt(data[i][3]), color: '#00FF00' });
+							temps.push({y:parseInt(data[i][4]), color: '#00FF00' });
+						}
+						time.push(data[i][1]);
+					}
+					highcharsinit();
+					} //success end
+
+			}); //ajax end
+
+		}); //function end
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">Insert Highchart Here</div>
+		
+		<button class = "btn btn-warning " id = "GetData">GetData</button>
+		<!--
+		<button class = "btn btn-dangerous"id = "trigger">Trigger EA</button> 
+		<button class = "btn btn-info"id = "trigger">Trigger NB</button> 
+		<button class = "btn btn-link"id = "Random">Random</button>
+		-->
+		
+		
+	</div>
+	
+</body>
+</html>
