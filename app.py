@@ -47,10 +47,10 @@ def getData():
     conn = pymysql.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
 
     c = conn.cursor()
-
+ 
 
     #====== 執行 MySQL 查詢指令 ======#
-    c.execute("update sensors set status = RAND()*1000 where true")
+    c.execute("update sensors set value = RAND()*1000 where true")
     conn.commit()
     
     c.execute("SELECT * FROM sensors")
