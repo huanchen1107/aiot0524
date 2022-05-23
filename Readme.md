@@ -1,10 +1,10 @@
-# Huan Chen's Homework #5 v3
+# Huan Chen's Homework #5 v0
 
-## Lecture 13: IoT Flask Web (github, vs code)
+## Lecture 14: IoT Flask Web (github, vs code)
 ### Development Environment Setup
 1. Please install vs code, register github, install git for windows
-2. (check-point 1) github create a new repository (aiot0518)
-3. go to vs code clone this repository  
+2. (check-point 1) github create a new repository (aiot0524)
+3. go to vs code clone this repository (choose new branch) 
 4. vs code 安裝 python extension 
 5. pip install flask, pandas, sklearn 
   * 快捷鍵 ctrl+shift+p ===> package manager 叫出 (git clone....)
@@ -14,12 +14,8 @@
    * C:> git config --global user.email huanchen1107@gmail.com
  <img src="./step.jpg" height=300 />  
 
-### Flask Web Development 
 
-1. (check-point 3) simple flask web
- * return 'hello world'
- * retun "<h1>Hello World big font</h1>"
- * return return app.send_static_file('index.html')  ==> remeber to create static/index.html
+
 
 
 
