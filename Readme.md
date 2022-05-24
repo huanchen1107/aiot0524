@@ -31,5 +31,12 @@
 '''
 7. Remeber to turn on xampp/MySQL (Apache is not necessary)
 
+8. 需要啟動資料庫
+  1. 開啟xampp -> mysql
+  2. 新增使用者test123
+  3. 建立資料庫aiotdb
+  4. 匯入sensors.sql
+  5. python app.py 啟動伺服器 
+
 
 
